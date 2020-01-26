@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Movie Review</string>
+    <string name="director">Regisseur</string>
+    <string name="actors">Schauspieler</string>
+    <string name="genre">Genre</string>
+    <string name="plot">Handlung:</string>
+    <string name="revie_movie_btn">FILM BEWERTEN</string>
+    <string name="rate_this_movie_btn">DIESEN FILM BEWERTEN</string>
+    <string name="rating_saved">Gespeichert!</string>
+</resources>

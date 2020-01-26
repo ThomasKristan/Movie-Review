@@ -18,11 +18,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".MovieRatingActivity"
-            android:parentActivityName=".MovieDetailsActivity"
-            android:label="Movie Rating"></activity>
-        <activity android:name=".MovieDetailsActivity"
+            android:parentActivityName=".MovieDetailActivity"
+            android:label="Movie Rating"/>
+        <activity android:name=".MovieDetailActivity"
             android:parentActivityName=".MainActivity"
             android:label="Movie Details"/>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

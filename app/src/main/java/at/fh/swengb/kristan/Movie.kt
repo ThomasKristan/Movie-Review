@@ -1,22 +1,23 @@
 package at.fh.swengb.kristan
 
-class Movie (val id: String,
-             val title: String,
-             val release: String,
-             val plot: String,
-             val genre: MovieGenre,
-             val director: Person,
-             val actors: List<Person>,
-             val reviews: MutableList<Review>){
+import com.squareup.moshi.JsonClass
 
-    fun reviewAverage():Double {
-        var sum = 0.0
-        reviews.forEach{
-            sum += it.reviewValue
+@JsonClass (generateAdapter = true)
+open class Movie(val id: String,
+                 val title: String,
+                 val release: String,
+                 val posterImagePath: String,
+                 val backdropImagePath: String,
+                 val reviews: MutableList<Review>
+) {
+    fun reviewAverage(): Double {
+        val average = reviews.map { it.reviewValue }.average()
+        if (average.isNaN()) {
+            return 0.0
         }
 
-        val average = String.format("%.3f", sum / reviews.count()).toDouble()
-        return average
-    }
+        return (Math.round(average *10)/10.0)
 
+    }
 }
+
